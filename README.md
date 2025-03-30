@@ -21,6 +21,7 @@ Clone the repository:
 ```bash
 git clone git@github.com:dailyops/linters.git
 cd linters
+pip3 install Jinja2
 ```
 
 ---
