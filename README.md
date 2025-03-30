@@ -37,7 +37,7 @@ python spintax.py <template_file_path>
 ### Example
 
 ```bash
-python3 spindle.py example-template.j2
+python3 spintax.py example-template.j2
 ```
 
 ---
