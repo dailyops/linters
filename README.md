@@ -31,13 +31,13 @@ pip3 install Jinja2
 Run the linter with the following command:
 
 ```bash
-python spintax.py <template_file_path>
+python spindle.py <template_file_path>
 ```
 
 ### Example
 
 ```bash
-python3 spintax.py example-template.j2
+python3 spindle.py example-template.j2
 ```
 
 ---
