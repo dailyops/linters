@@ -51,10 +51,6 @@ The linter will output results in the following format:
 [SpEL] example-template.j2 (Line 12): Possible Syntax Error: ${execution['trigger']['user']}
 ```
 
-- **Jinja2 Syntax OK**: No syntax issues detected.
-- **SpEL Syntax OK**: No syntax issues detected.
-- **Possible Syntax Error**: Detected potential issues with SpEL expressions.
-
 ---
 
 ## Contributing
