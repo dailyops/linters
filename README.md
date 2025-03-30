@@ -1,89 +1,67 @@
-🌀 Spindle - Spinnaker Template Linter
-Spindle is a simple linter tool to validate Jinja2 and SpEL (Spring Expression Language) syntax within Spinnaker templates. This script helps identify syntax errors, ensuring smooth pipeline execution.
+# Spindle - Spinnaker Template Linter
 
-✨ Features
-Validates Jinja2 syntax, including custom tags (like do).
+A linter tool to validate **Jinja2** and **SpEL (Spring Expression Language)** syntax within Spinnaker templates (originally) or general .j2 extension files. This script helps identify syntax errors, ensuring smooth pipeline execution.
 
-Validates SpEL syntax within templates.
+---
 
-Checks for balanced brackets and quotes in SpEL expressions.
+## Features
 
-Identifies issues with unrecognized Jinja2 filters.
+- Validates **Jinja2** syntax, including custom tags (like `do`)
+- Validates **SpEL** syntax within templates
+- Checks for **balanced brackets and quotes** in SpEL expressions
+- Identifies issues with **unrecognized Jinja2 filters**
+- Displays **line numbers** for easy debugging
 
-Displays line numbers for easy debugging.
+---
 
-🚀 Installation
+## Installation
+
 Clone the repository:
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/spindle.git  
-cd spindle  
-Install the required packages:
+```bash
+git clone git@github.com:dailyops/linters.git
+cd linters
+```
 
-bash
-Copy
-Edit
-pip install jinja2  
-📝 Usage
-To lint a template file, run the script with the file path as an argument:
+---
 
-bash
-Copy
-Edit
-python spindle.py <template_path>  
-Example:
-bash
-Copy
-Edit
-python spindle.py templates/my_pipeline.j2  
-🔍 Output Example
-The script will display syntax validation results, including errors with line numbers:
+## Usage
 
-css
-Copy
-Edit
-[Jinja2] templates/my_pipeline.j2: Syntax OK  
-[SpEL] templates/my_pipeline.j2 (Line 42): Possible Syntax Error: ${ execution['trigger']['user'] }  
-If the syntax is correct:
+Run the linter with the following command:
 
-bash
-Copy
-Edit
-[Jinja2] templates/my_pipeline.j2: Syntax OK  
-[SpEL] templates/my_pipeline.j2: Syntax OK  
-💡 How It Works
-Jinja2 Linting:
+```bash
+python spintax.py <template_file_path>
+```
 
-Uses Jinja2's environment to parse and check syntax.
+### Example
 
-Supports custom extensions like the do extension.
+```bash
+python3 spindle.py example-template.j2
+```
 
-SpEL Linting:
+---
 
-Detects SpEL expressions within templates.
+## Output
 
-Ensures balanced brackets and quotes in complex expressions.
+The linter will output results in the following format:
 
-Handles expressions within double quotes and nested structures.
+```
+[Jinja2] example-template.j2: Syntax OK
+[SpEL] example-template.j2 (Line 12): Possible Syntax Error: ${execution['trigger']['user']}
+```
 
-Error Reporting:
+- **Jinja2 Syntax OK**: No syntax issues detected.
+- **SpEL Syntax OK**: No syntax issues detected.
+- **Possible Syntax Error**: Detected potential issues with SpEL expressions.
 
-Displays line numbers and specific errors for efficient debugging.
+---
 
-✅ Supported Syntax
-Jinja2 Tags: Supports standard and custom tags like do.
+## Contributing
 
-SpEL Expressions: Supports complex nested SpEL syntax, including those within JSON strings.
+Feel free to open issues or submit pull requests if you find any bugs or have feature suggestions. Contributions are always welcome!
 
-Common Issues: Unrecognized Jinja2 filters and unbalanced SpEL expressions.
+---
 
-🤝 Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests.
+## License
 
-📄 License
-Spindle is licensed under the MIT License.
-
-📧 Contact
-For support or feature requests, please open an issue on the GitHub page.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
